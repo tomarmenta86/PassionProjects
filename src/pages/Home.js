@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
-import { AppBar, Toolbar, Typography, Button, Container, Chip, Menu, MenuItem } from '@mui/material';
+import { Typography, Container } from '@mui/material';
 import {Web, Palette, BarChart, Create, Api, DataUsage, Menu as MenuIcon} from '@mui/icons-material';
 import { tags, generateRandomJobs } from '../utils/jobUtils'; 
 import Banner from '../components/Banner';
 import JobList from '../components/JobList';
+import Header from '../components/Header';
+import TagMenu from '../components/TagMenu';
 
 function HomePage() {
   const jobs = generateRandomJobs(5);
@@ -24,58 +25,27 @@ function HomePage() {
     setSelectedTag(null);
   };
 
-  return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6">The Passion Projects</Typography>
-          <Link to="/signin" style={{ textDecoration: 'none', color: 'white' }}>
-          <Button color="inherit">Sign In</Button>
-          </Link>
-          <Link to="/signup" style={{ textDecoration: 'none', color: 'white' }}>
-          <Button color="inherit">Sign Up</Button>
-          </Link>
-        </Toolbar>
-      </AppBar>
-
-      <Container>
+  
+return (
+  <div>
+    <Header />
+    <Container>
      <Banner/>
-
         <Typography variant="h4" align="center" style={{ marginTop: '1rem' }}>
           Search the Projects
         </Typography>
 
-        {/* Tags dropdown */}
-        <div style={{ marginTop: '1rem', marginBottom: '1rem' }}>
-          <Button
-            aria-controls="tag-menu"
-            aria-haspopup="true"
-            onClick={handleTagClick}
-            startIcon={<MenuIcon />}
-          >
-            Filter by Tag
-          </Button>
-          <Menu
-            id="tag-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={() => setAnchorEl(null)}
-          >
-            {tags.map((tag, index) => (
-              <MenuItem key={index} onClick={() => handleTagClose(tag)}>
-                <Chip
-                  icon={getIcon(tag)}
-                  label={tag}
-                  variant="outlined"
-                  style={{ margin: '0.2rem' }}
-                />
-              </MenuItem>
-            ))}
-            <MenuItem onClick={handleClearFilter}>Clear Filter</MenuItem>
-          </Menu>
-        </div>
-          {/* Rendering the joblist */}
+        {/* TagMenu*/}
+        <TagMenu
+        anchorEl={anchorEl}
+        handleTagClick={handleTagClick}
+        handleTagClose={handleTagClose}
+        tags={tags}
+        getIcon={getIcon}
+        handleClearFilter={handleClearFilter}
+        setAnchorEl={setAnchorEl}
+        MenuIcon={MenuIcon}
+        />
         <JobList jobs={jobs} selectedTag={selectedTag} getIcon={getIcon} />
       </Container>
     </div>
