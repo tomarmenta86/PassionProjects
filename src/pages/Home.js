@@ -1,27 +1,10 @@
 import React, { useState } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Container,
-  Chip,
-  Card,
-  CardContent,
-  Menu,
-  MenuItem,
-} from '@mui/material';
 import { Link } from 'react-router-dom'
+import { AppBar, Toolbar, Typography, Button, Container, Chip, Menu, MenuItem } from '@mui/material';
+import {Web, Palette, BarChart, Create, Api, DataUsage, Menu as MenuIcon} from '@mui/icons-material';
 import { tags, generateRandomJobs } from '../utils/jobUtils'; 
-import {
-  Web,
-  Palette,
-  BarChart,
-  Create,
-  DataUsage,
-  Menu as MenuIcon,
-} from '@mui/icons-material';
 import Banner from '../components/Banner';
+import JobList from '../components/JobList';
 
 function HomePage() {
   const jobs = generateRandomJobs(5);
@@ -49,6 +32,9 @@ function HomePage() {
           <Link to="/signin" style={{ textDecoration: 'none', color: 'white' }}>
           <Button color="inherit">Sign In</Button>
           </Link>
+          <Link to="/signup" style={{ textDecoration: 'none', color: 'white' }}>
+          <Button color="inherit">Sign Up</Button>
+          </Link>
         </Toolbar>
       </AppBar>
 
@@ -56,7 +42,7 @@ function HomePage() {
      <Banner/>
 
         <Typography variant="h4" align="center" style={{ marginTop: '1rem' }}>
-          Find Your Next Passion Project
+          Search the Projects
         </Typography>
 
         {/* Tags dropdown */}
@@ -89,33 +75,8 @@ function HomePage() {
             <MenuItem onClick={handleClearFilter}>Clear Filter</MenuItem>
           </Menu>
         </div>
-
-        {/* Filtered jobs */}
-        <div>
-          {selectedTag ? (
-            jobs
-              .filter((job) => job.tags.includes(selectedTag))
-              .map((job, index) => (
-                <Card key={index} style={{ marginBottom: '1rem' }}>
-                  <CardContent>
-                    <Typography variant="h6">{job.title}</Typography>
-                    <Typography variant="subtitle1">{job.requester}</Typography>
-                    <Typography>{job.details}</Typography>
-                  </CardContent>
-                </Card>
-              ))
-          ) : (
-            jobs.map((job, index) => (
-              <Card key={index} style={{ marginBottom: '1rem' }}>
-                <CardContent>
-                  <Typography variant="h6">{job.title}</Typography>
-                  <Typography variant="subtitle1">{job.requester}</Typography>
-                  <Typography>{job.details}</Typography>
-                </CardContent>
-              </Card>
-            ))
-          )}
-        </div>
+          {/* Rendering the joblist */}
+        <JobList jobs={jobs} selectedTag={selectedTag} getIcon={getIcon} />
       </Container>
     </div>
   );
@@ -134,6 +95,8 @@ function getIcon(tag) {
       return <Create />;
     case 'Data Science':
       return <DataUsage />;
+      case 'Api':
+      return <Api />;
     default:
       return null;
   }

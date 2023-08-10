@@ -1,4 +1,4 @@
-export const tags = ['Web Development', 'Design', 'Marketing', 'Writing', 'Data Science'];
+export const tags = ['Web Development', 'Design', 'Marketing', 'Writing', 'Api', 'Build'];
 
 export const generateRandomJobs = (count) => {
   const jobs = [];
@@ -6,7 +6,7 @@ export const generateRandomJobs = (count) => {
     jobs.push({
       title: `Job Title ${i + 1}`,
       requester: `Requester ${i + 1}`,
-      details: 'Short job description here...',
+      details: 'Description...',
     });
   }
   return jobs;

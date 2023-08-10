@@ -15,6 +15,7 @@ An app designed to host a community for web-developers to post freelance work or
 Open the app and search freelance job postings byt tags, keyword, users etc. Or create an account and list your proficiencies.
 
 ## Credits
+
 MaterialUi
 
 ## Questions
