@@ -6,7 +6,7 @@ import Banner from '../components/Banner';
 import JobList from '../components/JobList';
 import Header from '../components/Header';
 import TagMenu from '../components/TagMenu';
-
+import PostProjectDetails from '../components/'
 function HomePage() {
   const jobs = generateRandomJobs(5);
   const [anchorEl, setAnchorEl] = useState(null);

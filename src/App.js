@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import HomePage from './pages/Home';
 import SignInSide from './pages/signIn';
 import SignUp from './pages/signUp';
+import 
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
+    </JobForm>
   );
 }
 
 export default App;
+//////

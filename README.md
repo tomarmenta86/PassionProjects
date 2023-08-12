@@ -17,7 +17,7 @@ Open the app and search freelance job postings byt tags, keyword, users etc. Or 
 ## Credits
 
 [Thomas](https://github.com/tomarmenta86)
-[Rachel](https://github.com/)
+[Rachael](https://github.com/missblasko)
 [Luke](https://github.com/)
 [Ali](https://github.com/)
 [Adrian](https://github.com/ajmcSE)
