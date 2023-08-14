@@ -1,11 +1,12 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Link } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Header() {
 return (
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">The Passion Projects</Typography>
+          <Typography variant="h6">DevsByDesign</Typography>
           <Link to="/signin" style={{ textDecoration: 'none', color: 'white' }}>
           <Button color="inherit">Sign In</Button>
           </Link>

@@ -1,5 +1,5 @@
 
-# ThePassionProjects
+# Devs-By-Design
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ An app designed to host a community for web-developers to post freelance work or
 
 ## Usage
 
-Open the app and search freelance job postings byt tags, keyword, users etc. Or create an account and list your proficiencies.
+Open the app and search freelance job postings by tags, keyword, users etc. Or create an account and list your proficiencies.
 
 ## Credits
 
@@ -22,11 +22,11 @@ Open the app and search freelance job postings byt tags, keyword, users etc. Or 
 [Ali](https://github.com/)
 [Adrian](https://github.com/ajmcSE)
 [Marisel](https://github.com/)
-[Heber](https://github.com/)
+[Heber](https://github.com/Heber-Marcano)
 
 
 
 ## Questions
 
-Reach out with any questions and inquiries at tomarmenta86@gmail.com. You can also find similar work at [tomarmenta86](https://github.com/tomarmenta86) on GitHub
+Reach out with any questions and inquiries at [email]. You can also find similar work at [GH](https://github.com/) on GitHub
 
