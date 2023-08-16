@@ -7,10 +7,13 @@ const resolvers = {
     users: async () => {
       return User.find().populate('posts');
     },
-    user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('posts');
-    },
+    // user: async (parent, { username }) => {
+    //   return User.findOne({ username }).populate('posts');
+    // },
+    posts: async (parent, args, context) => {
+      return Post.find().populate("requester_id").populate("interested_users")
 
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate('posts');
@@ -20,8 +23,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { firstName, lastName, email, password }) => {
+      const user = await User.create({ firstName, lastName, email, password });
       const token = signToken(user);
       return { token, user };
     },
