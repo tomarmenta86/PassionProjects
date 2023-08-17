@@ -1,6 +1,6 @@
 import React from "react";
 
-function TermsAndConditions() {
+export default function TermsAndConditions() {
     return (
       <>
       

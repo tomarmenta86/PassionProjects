@@ -16,6 +16,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 
+
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const defaultTheme = createTheme();
@@ -55,7 +56,7 @@ export default function Profile() {
               <Link color="inherit" href="./Home">
                 <Button variant="contained">Explore</Button>
               </Link>
-              <Link color="inherit" href="./PostJob">
+              <Link color="inherit" href="./PostProject">
                 <Button variant="outlined">Start new project</Button>
               </Link>
             </Stack>
