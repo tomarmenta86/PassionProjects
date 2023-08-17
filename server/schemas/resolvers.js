@@ -7,9 +7,7 @@ const resolvers = {
     users: async () => {
       return User.find().populate('posts');
     },
-    // user: async (parent, { username }) => {
-    //   return User.findOne({ username }).populate('posts');
-    // },
+    
     posts: async (parent, args, context) => {
       return Post.find().populate("requester_id").populate("interested_users")
 
