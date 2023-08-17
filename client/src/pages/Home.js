@@ -5,9 +5,11 @@ import Banner from '../components/Banner';
 import JobList from '../components/JobList';
 import Header from '../components/Header';
 import TagMenu from '../components/TagMenu';
+import PostProject from '../pages/PostProject';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import TermsAndConditions from '../pages/TermsAndConditions';
+import { Grid, Box, Chip, TextField } from '@mui/material';
 import Footer from '../components/Footer';
-import { Grid, Chip, Box } from '@mui/material';
-
 
 function HomePage() {
   const jobs = generateRandomJobs(5);
