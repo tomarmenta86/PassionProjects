@@ -1,5 +1,5 @@
 
-# Devs-By-Design
+# Devs-By-Design™
 
 ## Table of Contents
 
