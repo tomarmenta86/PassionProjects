@@ -1,17 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import { Avatar, Button, Box, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Typography } from "@mui/material/";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
@@ -20,12 +10,10 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-
-
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
     firstName: "",
@@ -33,6 +21,7 @@ export default function SignUp() {
     email: "",
     password: "",
   });
+
   const [addUser] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
@@ -54,17 +43,16 @@ export default function SignUp() {
       });
 
       Auth.login(data.addUser.token);
-      navigate("/")
-      console.log(data.addUser.token)
+      navigate("/");
+      console.log(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
-
+  };
 
   return (
-    
     <ThemeProvider theme={defaultTheme}>
-       <Header />
+      <Header />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -164,5 +152,4 @@ export default function SignUp() {
       </Container>
     </ThemeProvider>
   );
-}
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function PrivacyPolicy() {
+export default function PrivacyPolicy() {
     return (
       <>
        
