@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TextField, FormControl, Button } from '@mui/material';
 
 const Form = () => {
   const [firstName, setFirstName] = useState('');
@@ -17,26 +18,61 @@ const Form = () => {
     <form onSubmit={handleSubmit}>
       <h1>Contact Form</h1>
       <section>
-        <label>First Name</label>
-        <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-        <label>Last Name</label>
-        <input type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-        <label>Email</label>
-        <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <label>Phone Number</label>
-        <input type="text" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+        <FormControl>
+          <TextField
+            label="First Name"
+            name="firstName"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </FormControl>
+        <FormControl>
+          <TextField
+            label="Last Name"
+            name="lastName"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </FormControl>
+        <FormControl>
+          <TextField
+            label="Email"
+            name="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </FormControl>
+        <FormControl>
+          <TextField
+            label="Phone Number"
+            name="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </FormControl>
       </section>
       <section>
-        <label>Project Title</label>
-        <input type="text" name="projectTitle" value={projectTitle} onChange={(e) => setProjectTitle(e.target.value)} />
-        <label>Project Description</label>
-        <textarea name="projectDescription" value={projectDescription} onChange={(e) => setProjectDescription(e.target.value)} />
+        <FormControl>
+          <TextField
+            label="Project Title"
+            name="projectTitle"
+            value={projectTitle}
+            onChange={(e) => setProjectTitle(e.target.value)}
+          />
+        </FormControl>
+        <FormControl>
+          <textarea
+            label="Project Description"
+            name="projectDescription"
+            value={projectDescription}
+            onChange={(e) => setProjectDescription(e.target.value)}
+          />
+        </FormControl>
       </section>
-      <button type="submit">Submit</button>
+      <Button type="submit">Submit</Button>
     </form>
   );
 };
 
 export default Form;
-
-

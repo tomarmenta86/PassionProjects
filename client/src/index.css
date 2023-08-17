@@ -2,22 +2,50 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import url('https://fonts.googleapis.com/css2?family=Handjet&family=Major+Mono+Display&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif, 'Handjet', cursive, 'Major Mono Display', monospace;
-    
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    
-  
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  };
-  
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.font-major-mono-display {
+  font-family: 'Major Mono Display', monospace;
+  font-size:xx-large
+}
+.font-handjet {
+  font-family: 'Handjet', cursive;
+  font-size:xx-large
+}
+
+.font-lobster {
+  font-family: 'Lobster', cursive;
+  font-size:xx-large
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive;
+  font-size:xx-large
+}
+
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+  font-size:xx-large
+}
+
+.font-quicksand {
+  font-family: 'Quicksand', sans-serif;
+  font-size:xx-large
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

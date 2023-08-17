@@ -4,7 +4,9 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 
 function TagMenu({ anchorEl, handleTagClick, handleTagClose, tags, getIcon, selectedTag, handleClearFilter }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', padding: '2rem', marginRight: '3rem' }}>
+    <div style={{ 
+      display: 'flex', 
+      flexDirection: 'column'}}>
       <Button
         aria-controls="tag-menu"
         aria-haspopup="true"
@@ -14,17 +16,7 @@ function TagMenu({ anchorEl, handleTagClick, handleTagClose, tags, getIcon, sele
       >
         Filter by Tag
       </Button>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {tags.map((tag, index) => (
-          <Chip
-            key={index}
-            label={tag}
-            color={tag === selectedTag ? 'primary' : 'default'}
-            onClick={() => handleTagClick(tag)}
-            style={{ marginBottom: '2rem', cursor: 'pointer' }}
-          />
-        ))}
-      </div>
+    
       <Menu
         id="tag-menu"
         anchorEl={anchorEl}
