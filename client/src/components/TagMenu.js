@@ -1,8 +1,29 @@
 import React from 'react';
 import { Button, Menu, MenuItem, Chip } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
+import { Menu as MenuIcon, Web, Palette, BarChart, Create, Api, DataUsage } from '@mui/icons-material';
+import HtmlIcon from '@mui/icons-material/Html';
 
-function TagMenu({ anchorEl, handleTagClick, handleTagClose, tags, getIcon, selectedTag, handleClearFilter }) {
+function TagMenu({ anchorEl, handleTagClick, handleTagClose, tags, handleClearFilter }) {
+  const getIcon = (tag) => {
+    switch (tag) {
+      case 'Web Development':
+        return <Web />;
+        case 'HTML':
+        return <HtmlIcon />;
+      case 'Design':
+        return <Palette />;
+      case 'Marketing':
+        return <BarChart />;
+      case 'Writing':
+        return <Create />;
+      case 'Data Science':
+        return <DataUsage />;
+      case 'Api':
+        return <Api />;
+      default:
+        return null;
+    }
+  };
   return (
     <div style={{ 
       display: 'flex', 
