@@ -6,6 +6,8 @@ import JobList from '../components/JobList';
 import Header from '../components/Header';
 import TagMenu from '../components/TagMenu';
 import PostProject from '../pages/PostProject';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import TermsAndConditions from '../pages/TermsAndConditions';
 import { Grid, TextField } from '@mui/material';
 
 function HomePage() {
