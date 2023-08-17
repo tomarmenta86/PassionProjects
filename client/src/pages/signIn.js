@@ -17,25 +17,8 @@ import { useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import {LOGIN} from "../utils/mutations"
 import Auth from "../utils/auth"
-
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="./Home">
-        DevsByDesign
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const defaultTheme = createTheme();
 
@@ -74,7 +57,9 @@ export default function SignInSide() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
+      <Header />
+      <Grid container component="main" sx={{ height: '100vh' }}>
+
         <CssBaseline />
         <Grid
           item
@@ -161,7 +146,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
+              <Footer sx={{ mt: 5 }} />
             </Box>
           </Box>
         </Grid>
