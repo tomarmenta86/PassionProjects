@@ -18,7 +18,7 @@ Open the app and search freelance job postings by tags, keyword, users etc. Or c
 
 [Thomas](https://github.com/tomarmenta86)
 [Rachael](https://github.com/missblasko)
-[Luke](https://github.com/)
+[Luke](https://github.com/lbcamp1117)
 [Ali](https://github.com/)
 [Adrian](https://github.com/ajmcSE)
 [Marisel](https://github.com/)
