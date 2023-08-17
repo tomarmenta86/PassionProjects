@@ -7,7 +7,7 @@ function JobList({ jobs, selectedTag}) {
         <div>
           {selectedTag ? (
             jobs
-              .filter((job) => job.tags.includes(selectedTag))
+              .filter((job) => job.tags && job.tags.includes(selectedTag))
               .map((job, index) => (
                 <Card key={index} style={{ marginBottom: '1rem' }}>
                   <CardContent>

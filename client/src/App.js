@@ -15,6 +15,7 @@ import {
 import HomePage from "./pages/Home";
 import SignInSide from "./pages/signIn";
 import SignUp from "./pages/signUp";
+import Profile from "./pages/UserProfilePage";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -47,6 +48,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/signin" element={<SignInSide />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/UserProfilePage" element={<Profile />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

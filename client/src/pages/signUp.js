@@ -16,24 +16,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="./Home">
-        DevsByDesign
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const defaultTheme = createTheme();
 
@@ -44,7 +29,7 @@ export default function SignUp() {
     email: "",
     password: "",
   });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addUser] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -70,17 +55,19 @@ export default function SignUp() {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get("email"),
+  //     password: data.get("password"),
+  //   });
+  // };
 
   return (
+    
     <ThemeProvider theme={defaultTheme}>
+       <Header />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -155,7 +142,7 @@ export default function SignUp() {
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="I like checking boxes without reading what I'm agreeing to."
                 />
               </Grid>
             </Grid>
@@ -176,7 +163,7 @@ export default function SignUp() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+        <Footer sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
