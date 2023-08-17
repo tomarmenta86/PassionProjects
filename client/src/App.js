@@ -15,6 +15,10 @@ import {
 import HomePage from "./pages/Home";
 import SignInSide from "./pages/signIn";
 import SignUp from "./pages/signUp";
+import Profile from "./pages/UserProfilePage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import Form from "./pages/PostProject"
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -47,6 +51,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/signin" element={<SignInSide />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/UserProfilePage" element={<Profile />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+        <Route path="/PostProject" element={<Form />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
