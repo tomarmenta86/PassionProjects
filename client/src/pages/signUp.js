@@ -16,15 +16,19 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
 
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
+  const navigate = useNavigate()
+
   const [formState, setFormState] = useState({
-    fistName: "",
+    firstName: "",
     lastName: "",
     email: "",
     password: "",
@@ -50,19 +54,12 @@ export default function SignUp() {
       });
 
       Auth.login(data.addUser.token);
+      navigate("/")
+      console.log(data.addUser.token)
     } catch (e) {
       console.error(e);
     }
-  };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get("email"),
-  //     password: data.get("password"),
-  //   });
-  // };
 
   return (
     
