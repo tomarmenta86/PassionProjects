@@ -7,9 +7,12 @@ import JobList from '../components/JobList';
 import Header from '../components/Header';
 import TagMenu from '../components/TagMenu';
 import Footer from '../components/Footer';
+import { useQuery } from "@apollo/client";
+import {QUERY_ALL_POSTS} from '../utils/queries';
 
 
 function HomePage() {
+  const { loading, data } = useQuery(QUERY_ALL_POSTS);
   const jobs = generateRandomJobs(5);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedTag, setSelectedTag] = useState(null);
@@ -68,7 +71,9 @@ function HomePage() {
             ))}
           </Grid>
           <Grid item xs={6}>
-            <JobList jobs={jobs} selectedTag={selectedTag || ''} />
+            {loading ? "Loading" :
+            <JobList jobs={data?.posts} selectedTag={selectedTag || ''} />
+            }
           </Grid>
         </Grid>
         <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
